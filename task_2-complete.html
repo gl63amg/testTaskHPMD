@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link href='https://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+	</head>
+	<style>
+		body {
+			font-family: 'Roboto', sans-serif;
+		}
+
+		.wrapper {
+			width:1024px;
+			margin: 0 auto;
+		}
+
+		.task {
+			width: 100%;
+		}
+
+		canvas {
+			display: block;
+			width: 300px;
+			height: 300px;
+			margin: 0 auto;
+			border: 2px solid red;
+		}
+		span {
+			text-align: center;
+			width: 100%;
+			display: block;
+			padding: 5px;
+		}
+	</style>
+	
+	<body>
+		<div class="wrapper">
+			<section class="text">
+				<h2>Задание 2</h2>
+				<p>
+					Тут уже задача посложнее. Нужно нарисовать картинку border.png на canvas-е с сохранением пропорций и качества.<br>
+					Размер canvas-а оставить неизменным (300х300).( ͡° ͜ʖ ͡°)
+			</section>
+			<section class="task task2">
+				<canvas id='canvas'></canvas>
+			</section>
+			
+			
+			<section class="task task2">
+			<span>Так как не совсем понял как именно требуется вписать картинку в холст. Делаю два варианта</span>
+				<canvas id='canvas2'></canvas>
+			</section>
+		</div>
+	</body>
+
+	<script>
+		var canvas = document.querySelector('#canvas');
+		var context = canvas.getContext('2d');
+
+		var image = new Image();
+		
+		image.onload = function () {
+			context.drawImage(image,0,40, 300, 70);
+		};
+		image.src = 'border.png';
+		
+	</script>
+		<script>
+		var mycanvas = document.querySelector('#canvas2');
+		var mycontext = mycanvas.getContext('2d');
+
+		var myimage = new Image();
+		
+		myimage.onload = function () {
+			mycontext.drawImage(myimage,0,40, 300, 300, -15, -10, 300, 300);
+		};
+		myimage.src = 'border.png';
+		
+	</script>
+</html>
